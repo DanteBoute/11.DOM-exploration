@@ -3,6 +3,7 @@ const _initTime = Date.now()
 const getElapsedTime = () => {
   return Number((Date.now() - _initTime) / 1000).toFixed(2) + 's'
 }
+const elapsedTime = getElapsedTime();
 
 
 const clickOnSquare = (e) => {
@@ -11,14 +12,20 @@ const clickOnSquare = (e) => {
   const newDiv = document.createElement('div');
   const targetCloneDiv = document.querySelector('.displayedsquare-wrapper');
   newDiv.className = ('displayedsquare '+e.target.classList[1]);
+  const secondClassName = e.target.classList[1];
   targetCloneDiv.appendChild(newDiv);
+  const untList = document.querySelector('ul');
+  const newList = document.createElement('li');
+  newList.append('[' + getElapsedTime() + ']Created a new ' + secondClassName + ' square');
+  untList.appendChild(newList);
 }
 const actionSquares = document.querySelectorAll('.actionsquare')
 for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare)
 }
 
-  
+
+////TRY ONE //// Didn't know how to alter the classes of the cloned div ////
 
 // function cloneSquare(){
 //   const originalSquare = document.querySelector('.actionsquare');
