@@ -5,7 +5,6 @@ const getElapsedTime = () => {
 }
 const elapsedTime = getElapsedTime();
 
-
 const clickOnSquare = (e) => {
   console.log(e.target.classList[1])
   console.log(getElapsedTime())
@@ -24,7 +23,21 @@ for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare)
 }
 
-
+document.body.addEventListener('keypress', function(event) {
+    let R = Math.floor(Math.random() * 256);
+    let G = Math.floor(Math.random() * 256);
+    let B = Math.floor(Math.random() * 256);
+    let randomColor = "rgb(" + R + "," + G + "," + B + ")";
+  if (event.key === ' ') {
+    document.body.style.backgroundColor = randomColor;
+    getElapsedTime();
+    console.log(getElapsedTime());
+    const untList = document.querySelector('ul');
+    const newList = document.createElement('li');
+    newList.append('[' + getElapsedTime() + ']Changed the backgroundcolor');
+    untList.appendChild(newList);
+}
+});
 ////TRY ONE //// Didn't know how to alter the classes of the cloned div ////
 
 // function cloneSquare(){
