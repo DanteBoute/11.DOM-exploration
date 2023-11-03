@@ -6,12 +6,17 @@ const getElapsedTime = () => {
 const elapsedTime = getElapsedTime();
 const untList = document.querySelector('ul');
 
+function alertColor(e) {
+  alert(e.target.classList[1]);
+}
+
 const clickOnSquare = (e) => {
   console.log(e.target.classList[1])
   console.log(getElapsedTime())
   const newDiv = document.createElement('div');
   const targetCloneDiv = document.querySelector('.displayedsquare-wrapper');
   newDiv.className = ('displayedsquare ' + e.target.classList[1]);
+  newDiv.addEventListener('click', alertColor);
   const secondClassName = e.target.classList[1];
   targetCloneDiv.appendChild(newDiv);
   const untList = document.querySelector('ul');
@@ -23,6 +28,9 @@ const actionSquares = document.querySelectorAll('.actionsquare')
 for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare)
 }
+
+const newSquareWrapper = document.querySelector('.displayedsquare-wrapper');
+const newSquares = newSquareWrapper.children;
 
 document.body.addEventListener('keypress', function (event) {
   let R = Math.floor(Math.random() * 256);
@@ -56,7 +64,6 @@ document.body.addEventListener('keypress', function (event) {
     }
   }
 });
-
 ////TRY ONE //// Didn't know how to alter the classes of the cloned div ////
 
 // function cloneSquare(){
