@@ -4,13 +4,14 @@ const getElapsedTime = () => {
   return Number((Date.now() - _initTime) / 1000).toFixed(2) + 's'
 }
 const elapsedTime = getElapsedTime();
+const untList = document.querySelector('ul');
 
 const clickOnSquare = (e) => {
   console.log(e.target.classList[1])
   console.log(getElapsedTime())
   const newDiv = document.createElement('div');
   const targetCloneDiv = document.querySelector('.displayedsquare-wrapper');
-  newDiv.className = ('displayedsquare '+e.target.classList[1]);
+  newDiv.className = ('displayedsquare ' + e.target.classList[1]);
   const secondClassName = e.target.classList[1];
   targetCloneDiv.appendChild(newDiv);
   const untList = document.querySelector('ul');
@@ -23,21 +24,39 @@ for (let actionSquare of actionSquares) {
   actionSquare.addEventListener('click', clickOnSquare)
 }
 
-document.body.addEventListener('keypress', function(event) {
-    let R = Math.floor(Math.random() * 256);
-    let G = Math.floor(Math.random() * 256);
-    let B = Math.floor(Math.random() * 256);
-    let randomColor = "rgb(" + R + "," + G + "," + B + ")";
+document.body.addEventListener('keypress', function (event) {
+  let R = Math.floor(Math.random() * 256);
+  let G = Math.floor(Math.random() * 256);
+  let B = Math.floor(Math.random() * 256);
+  let randomColor = "rgb(" + R + "," + G + "," + B + ")";
   if (event.key === ' ') {
     document.body.style.backgroundColor = randomColor;
     getElapsedTime();
     console.log(getElapsedTime());
-    const untList = document.querySelector('ul');
+
     const newList = document.createElement('li');
     newList.append('[' + getElapsedTime() + ']Changed the backgroundcolor');
     untList.appendChild(newList);
-}
+  }
 });
+
+document.body.addEventListener('keypress', function (event) {
+  if (event.key === 'l') {
+    const listItems = untList.getElementsByTagName('li');
+    while (listItems.length > 0) {
+      untList.removeChild(listItems[0]);
+    }
+  }
+});
+document.body.addEventListener('keypress', function (event) {
+  if (event.key === 's') {
+    const listItemsBG = document.querySelector('.displayedsquare-wrapper');
+    while (listItemsBG.children.length > 0) {
+      listItemsBG.removeChild(listItemsBG.children[0]);
+    }
+  }
+});
+
 ////TRY ONE //// Didn't know how to alter the classes of the cloned div ////
 
 // function cloneSquare(){
@@ -56,4 +75,3 @@ document.body.addEventListener('keypress', function(event) {
 //        Create a new <div> with class with the same color
 
 // create a new div
-
