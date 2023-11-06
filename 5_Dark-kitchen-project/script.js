@@ -28,7 +28,7 @@ const pizzas = [
     {
       name: 'Vegetarian Pizza',
       crust: 'Thin Crust',
-      toppings: ['Mushrooms', 'Green Peppers', 'Onions', 'Olives', 'Tomato Sauce'],
+      toppings: ['Mushrooms', 'Green Peppers', 'Olives', 'Tomato Sauce'],
       price: '€11.99',
       picture: 'pizzas 2/4.png',
       vegetarian: 'Yes'
@@ -55,7 +55,7 @@ const pizzas = [
       {
         name: 'Mushroom Lovers Pizza',
         crust: 'Pan Crust',
-        toppings: ['Mushrooms', 'Mozzarella Cheese', 'Parmesan Cheese', 'Tomato Sauce'],
+        toppings: ['Mushrooms', 'Mozzarella', 'Parmesan', 'Tomato Sauce'],
         price: '€11.99',
         picture: 'pizzas 2/7.png',
         vegetarian: 'Yes'
@@ -73,7 +73,7 @@ const pizzas = [
       {
         name: 'White Pizza',
         crust: 'Thin Crust',
-        toppings: ['Ricotta Cheese', 'Mozzarella Cheese', 'Garlic', 'Spinach'],
+        toppings: ['Ricotta', 'Mozzarella', 'Garlic', 'Spinach'],
         price: '€12.99',
         picture: 'pizzas 2/9.png',
         vegetarian: 'Yes'
@@ -82,7 +82,7 @@ const pizzas = [
       {
         name: 'Buffalo Chicken Pizza',
         crust: 'Thin Crust',
-        toppings: ['Buffalo Chicken', 'Mozzarella Cheese', 'Red Onions', 'Blue Cheese'],
+        toppings: ['Buffalo Chicken', 'Mozzarella', 'Red Onions', 'Blue Cheese'],
         price: '€10.99',
         picture: 'pizzas 2/10.png',
         vegetarian: 'No'
@@ -91,7 +91,7 @@ const pizzas = [
       {
         name: 'Vegetable Delight Pizza',
         crust: 'Thin Crust',
-        toppings: ['Broccoli', 'Mushrooms', 'Bell Peppers', 'Onions', 'Tomato Sauce'],
+        toppings: ['Broccoli', 'Mushrooms', 'Bell Peppers', 'Tomato Sauce'],
         price: '€11.49',
         picture: 'pizzas 2/3.png',
         vegetarian: 'Yes'
@@ -121,7 +121,8 @@ const pizzas = [
   const pizzaCrust = document.createElement('h3');
   const pizzaToppings = document.createElement('p');
   const pizzaPrice = document.createElement('h2');
-  const pizzaType = document.createElement('h3')
+  const pizzaType = document.createElement('h3');
+  const addToCard = document.createElement('button');
   
   pizzaImage.src = onePizza.picture;
   pizzaName.textContent = onePizza.name;
@@ -129,6 +130,7 @@ const pizzas = [
   pizzaToppings.textContent = onePizza.toppings;
   pizzaPrice.textContent = onePizza.price;
   pizzaType.textContent = 'Veggie? '+ onePizza.vegetarian;
+  addToCard.textContent = 'Add To Cart';
 
   card.appendChild(pizzaImage);
   card.appendChild(pizzaName);
@@ -136,6 +138,7 @@ const pizzas = [
   card.appendChild(pizzaToppings);
   card.appendChild(pizzaPrice);
   card.appendChild(pizzaType);
+  card.appendChild(addToCard);
 
   mainSection.appendChild(card);
 }

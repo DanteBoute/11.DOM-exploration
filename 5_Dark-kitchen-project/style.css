@@ -15,6 +15,7 @@ header{
     font-style: italic;
     font-size: medium;
     width: 100%;
+    color: chocolate;
 }
 main{
     display: flex;
@@ -26,6 +27,7 @@ main{
 .card{
     background-color:lightgray;
     width: fit-content;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin: 1%;
 }
 h1{
@@ -35,6 +37,8 @@ h1{
 .topnav {
     background-color: lightgray;
     overflow: hidden;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin-bottom: 25px;
   }
   
   /* Style the links inside the navigation bar */
@@ -61,4 +65,18 @@ h1{
   .logoImage{
     width: 250px;
     height: auto;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  }
+  button{
+    background-color: chocolate;
+    margin-bottom: 2%;
+    font-size: 15px;
+    border-radius: 25px;
+    padding: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    border: none;
+  }
+  button:hover{
+    background-color: bisque;
+
   }
