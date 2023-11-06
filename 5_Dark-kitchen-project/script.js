@@ -144,7 +144,38 @@ const pizzas = [
     onePizza(pizza);
   });
 
-  function filterVegetarian(pizzas) {
-    return pizzas.filter(pizza => pizza.vegetarian === 'Yes');
+  const filterVegetarian = (pizzas)  => {
+    let vegetarianPizzas = pizzas.filter(pizza => pizza.vegetarian === 'Yes');
+    mainSection.innerHTML = '';
+    vegetarianPizzas.forEach(vegPizza => {
+        onePizza(vegPizza);
+    })
   }
-  filterVegetarian(pizzas);
+const veggieButton = document.querySelector('.veggieButton');
+veggieButton.addEventListener('click', () => {filterVegetarian(pizzas)});
+
+const filterThinCrust = (pizzas)  => {
+    let thinCrustPizzas = pizzas.filter(pizza => pizza.crust === 'Thin Crust');
+    mainSection.innerHTML = '';
+    thinCrustPizzas.forEach(thinPizza => {
+        onePizza(thinPizza);
+    })
+  }
+const thinCrustButton = document.querySelector('.thinCrustButton');
+thinCrustButton.addEventListener('click', () => {filterThinCrust(pizzas)});
+
+const filterPanCrust = (pizzas)  => {
+    let PanCrustPizzas = pizzas.filter(pizza => pizza.crust === 'Pan Crust');
+    mainSection.innerHTML = '';
+    PanCrustPizzas.forEach(panPizza => {
+        onePizza(panPizza);
+    })
+  }
+const panCrustButton = document.querySelector('.panCrustButton');
+panCrustButton.addEventListener('click', () => {filterPanCrust(pizzas)});
+
+const AllPizzasButton = document.querySelector('.allPizzasButton');
+AllPizzasButton.addEventListener('click', () => {  
+    mainSection.innerHTML = '';
+    pizzas.forEach(pizza => {
+    onePizza(pizza);})})
