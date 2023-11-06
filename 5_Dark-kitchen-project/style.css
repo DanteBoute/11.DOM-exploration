@@ -1,0 +1,64 @@
+*{
+    box-sizing: border-box;
+}
+body{
+    padding-left: 50px;
+    padding-right: 50px;
+}
+header{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    justify-content: center;
+}
+.subheader{
+    font-style: italic;
+    font-size: medium;
+    width: 100%;
+}
+main{
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    align-items: stretch;
+    justify-content: center;
+}
+.card{
+    background-color:lightgray;
+    width: fit-content;
+    margin: 1%;
+}
+h1{
+    width: 100%;
+}
+/* Add a black background color to the top navigation */
+.topnav {
+    background-color: lightgray;
+    overflow: hidden;
+  }
+  
+  /* Style the links inside the navigation bar */
+  .topnav a {
+    float: left;
+    color: chocolate;
+    text-align: center;
+    padding: 13px 15px;
+    text-decoration: none;
+    font-size: 16px;
+  }
+  
+  /* Change the color of links on hover */
+  .topnav a:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  /* Add a color to the active/current link */
+  .topnav a.active {
+    background-color:chocolate;
+    color: white;
+  }
+  .logoImage{
+    width: 250px;
+    height: auto;
+  }
