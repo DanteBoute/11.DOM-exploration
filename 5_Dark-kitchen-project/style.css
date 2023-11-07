@@ -6,6 +6,9 @@ body{
     padding-right: 50px;
     padding-top: 25px;
 }
+.logoImage{
+  margin-bottom: 25px;
+}
 header{
     display: flex;
     flex-wrap: wrap;
@@ -118,6 +121,7 @@ p{
 #dark-mode-switch{
   background-color:lightgray;
   padding: 5px;
-  border-radius: 25px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
   font-weight: bold;
+  width: 100%;
 }
