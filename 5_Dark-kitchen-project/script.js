@@ -3,7 +3,7 @@ const pizzas = [
       name: 'Pepperoni Pizza',
       crust: 'Thin Crust',
       toppings: ['Pepperoni', 'Mozzarella Cheese', 'Tomato Sauce'],
-      price: '€12.99',
+      price: '€' + 12.99,
       picture: 'pizzas 2/1.png',
       vegetarian: 'No'
     },
@@ -11,7 +11,7 @@ const pizzas = [
       name: 'Margherita Pizza',
       crust: 'Thin Crust',
       toppings: ['Fresh Basil', 'Mozzarella Cheese', 'Tomato Sauce'],
-      price: '€10.99',
+      price: '€' + 10.99,
       picture: 'pizzas 2/2.png',
       vegetarian: 'Yes'
 
@@ -20,7 +20,7 @@ const pizzas = [
       name: 'Supreme Pizza',
       crust: 'Pan Crust',
       toppings: ['Pepperoni', 'Sausage', 'Bell Peppers', 'Onions', 'Olives'],
-      price: '€15.99',
+      price: '€' + 15.99,
       picture: 'pizzas 2/3.png',
       vegetarian: 'No'
 
@@ -29,7 +29,7 @@ const pizzas = [
       name: 'Vegetarian Pizza',
       crust: 'Thin Crust',
       toppings: ['Mushrooms', 'Green Peppers', 'Olives', 'Tomato Sauce'],
-      price: '€11.99',
+      price: '€' + 11.99,
       picture: 'pizzas 2/4.png',
       vegetarian: 'Yes'
 
@@ -38,7 +38,7 @@ const pizzas = [
       name: 'Hawaiian Pizza',
       crust: 'Thin Crust',
       toppings: ['Ham', 'Pineapple', 'Mozzarella Cheese', 'Tomato Sauce'],
-      price: '€10.99',
+      price: '€' + 10.99,
       picture: 'pizzas 2/5.png',
       vegetarian: 'No'
 
@@ -47,7 +47,7 @@ const pizzas = [
         name: 'BBQ Chicken Pizza',
         crust: 'Thin Crust',
         toppings: ['Grilled Chicken', 'BBQ Sauce', 'Red Onions', 'Cilantro'],
-        price: '€13.99',
+        price: '€' + 13.99,
         picture: 'pizzas 2/6.png',
         vegetarian: 'No'
 
@@ -56,7 +56,7 @@ const pizzas = [
         name: 'Mushroom Lovers Pizza',
         crust: 'Pan Crust',
         toppings: ['Mushrooms', 'Mozzarella', 'Parmesan', 'Tomato Sauce'],
-        price: '€11.99',
+        price: '€' + 11.99,
         picture: 'pizzas 2/7.png',
         vegetarian: 'Yes'
 
@@ -65,7 +65,7 @@ const pizzas = [
         name: 'Meat Lovers Pizza',
         crust: 'Pan Crust',
         toppings: ['Pepperoni', 'Sausage', 'Bacon', 'Ham', 'Ground Beef'],
-        price: '€16.99',
+        price: '€' + 16.99,
         picture: 'pizzas 2/8.png',
         vegetarian: 'No'
 
@@ -74,7 +74,7 @@ const pizzas = [
         name: 'White Pizza',
         crust: 'Thin Crust',
         toppings: ['Ricotta', 'Mozzarella', 'Garlic', 'Spinach'],
-        price: '€12.99',
+        price: '€' + 12.99,
         picture: 'pizzas 2/9.png',
         vegetarian: 'Yes'
 
@@ -83,7 +83,7 @@ const pizzas = [
         name: 'Buffalo Chicken Pizza',
         crust: 'Thin Crust',
         toppings: ['Buffalo Chicken', 'Mozzarella', 'Red Onions', 'Blue Cheese'],
-        price: '€10.99',
+        price: '€' + 10.99,
         picture: 'pizzas 2/10.png',
         vegetarian: 'No'
 
@@ -92,7 +92,7 @@ const pizzas = [
         name: 'Vegetable Delight Pizza',
         crust: 'Thin Crust',
         toppings: ['Broccoli', 'Mushrooms', 'Bell Peppers', 'Tomato Sauce'],
-        price: '€11.49',
+        price: '€' + 11.49,
         picture: 'pizzas 2/3.png',
         vegetarian: 'Yes'
 
@@ -101,7 +101,7 @@ const pizzas = [
         name: 'Four Cheese Pizza',
         crust: 'Pan Crust',
         toppings: ['Mozzarella', 'Cheddar', 'Parmesan', 'Ricotta', 'Tomato Sauce'],
-        price: '€13.99',
+        price: '€' + 13.99,
         picture: 'pizzas 2/5.png',
         vegetarian: 'Yes'
 
@@ -120,7 +120,7 @@ const pizzas = [
   const pizzaName = document.createElement('h2');
   const pizzaCrust = document.createElement('h3');
   const pizzaToppings = document.createElement('p');
-  const pizzaPrice = document.createElement('h2');
+  const pizzaPrice = document.createElement('h3');
   const pizzaType = document.createElement('h3');
   const addToCard = document.createElement('button');
   
@@ -131,6 +131,9 @@ const pizzas = [
   pizzaPrice.textContent = onePizza.price;
   pizzaType.textContent = 'Veggie? '+ onePizza.vegetarian;
   addToCard.textContent = 'Add To Cart';
+
+  pizzaPrice.classList.add('priceOfPizza');
+  addToCard.classList.add('add-to-cart');
 
   card.appendChild(pizzaImage);
   card.appendChild(pizzaName);
@@ -182,3 +185,26 @@ AllPizzasButton.addEventListener('click', () => {
     mainSection.innerHTML = '';
     pizzas.forEach(pizza => {
     onePizza(pizza);})})
+
+// ADD TO CART
+
+document.addEventListener("DOMContentLoaded", function() {
+  const addToCartButtons = document.querySelectorAll("button");
+  const cartItemList = document.getElementById("cart-items");
+
+  addToCartButtons.forEach(button => {
+    button.addEventListener("click", function() {
+      const pizzaName = this.parentElement.querySelector("h2").textContent;
+      const pizzaPrice = this.parentElement.querySelector(".priceOfPizza").textContent;
+
+      const cartItem = document.createElement("li");
+      cartItem.textContent = `${pizzaName} - ${pizzaPrice}`;
+
+      cartItemList.appendChild(cartItem);
+
+      console.log(cartItem);
+    });
+  })
+})
+
+  

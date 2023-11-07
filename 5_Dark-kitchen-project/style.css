@@ -39,6 +39,7 @@ h1{
     overflow: hidden;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
+    margin: 20px;
   }
   
   /* Style the links inside the navigation bar */
@@ -49,6 +50,8 @@ h1{
     padding: 13px 15px;
     text-decoration: none;
     font-size: 16px;
+    width: 100%;
+    border-bottom: solid;
   }
   
   /* Change the color of links on hover */
@@ -78,5 +81,16 @@ h1{
   }
   button:hover{
     background-color: bisque;
+    color: darkgray;
 
   }
+  /* /* .add-to-cart {
+    background-color: chocolate;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer; 
+  }*/
+.shoppingCart{
+  width: 1000px;
+}
