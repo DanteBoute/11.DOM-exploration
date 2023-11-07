@@ -4,12 +4,15 @@
 body{
     padding-left: 50px;
     padding-right: 50px;
+    padding-top: 25px;
 }
 header{
     display: flex;
     flex-wrap: wrap;
     text-align: center;
     justify-content: center;
+    margin-left: 25%;
+    margin-right: 25%;
 }
 .subheader{
     font-style: italic;
@@ -40,6 +43,7 @@ h1{
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     margin-bottom: 25px;
     margin: 20px;
+    width: 100%;
   }
   
   /* Style the links inside the navigation bar */
@@ -49,9 +53,10 @@ h1{
     text-align: center;
     padding: 13px 15px;
     text-decoration: none;
-    font-size: 16px;
+    font-size: 20px;
     width: 100%;
     border-bottom: solid;
+    font-weight: bold;
   }
   
   /* Change the color of links on hover */
@@ -82,15 +87,37 @@ h1{
   button:hover{
     background-color: bisque;
     color: darkgray;
+    cursor: grab;
 
   }
-  /* /* .add-to-cart {
-    background-color: chocolate;
-    color: #fff;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer; 
-  }*/
 .shoppingCart{
   width: 1000px;
+}
+li{
+  list-style-type: none;
+  font-style: italic;
+
+}
+#cart-items{
+  padding: 0;
+}
+/* Light mode styles (default) */
+body {
+  background-color: #fff;
+  color: #000;
+}
+
+/* Dark mode styles */
+body.dark-mode {
+  background-color: #333;
+  color: #fff;
+}
+p{
+  font-weight: bold;
+}
+#dark-mode-switch{
+  background-color:lightgray;
+  padding: 5px;
+  border-radius: 25px;
+  font-weight: bold;
 }

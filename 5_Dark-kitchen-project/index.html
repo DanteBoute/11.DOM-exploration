@@ -11,6 +11,10 @@
     <header>
         <img class="logoImage" src="Logo Ristorante.png" alt="Logo">
         <h2 class="subheader">'Al Danté'</h2>
+        <div id="dark-mode-switch">
+          <input type="checkbox" id="dark-mode-toggle">
+          <label for="dark-mode-toggle">Dark Mode</label>
+      </div>
         <div class="topnav">
             <a class="allPizzasButton" href="#allPizzas">All Pizza's</a>
             <a class="thinCrustButton" href="#thinCrust">Thin Crust</a>
@@ -18,10 +22,12 @@
             <a class="veggieButton" href="#vegetarian">Vegetarian</a>
           </div>
           <div id="cart">
-            <h2 class="shoppingCart">Shopping Cart</h2>
+            <h2 class="shoppingCart">In The Oven</h2>
+            <hr>
             <ul id="cart-items"> 
 
             </ul>
+            <p>Total: €<span id="total-amount">0.00</span></p>
           </div>
     </header>
     <main>
